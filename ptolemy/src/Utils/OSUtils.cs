@@ -1,7 +1,7 @@
 
 using System;
 
-namespace ptolemy.utils
+namespace Ptolemy.Utils
 {
 	public class OSUtils
 	{

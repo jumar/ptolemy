@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E67885CB-6605-4E77-8B66-23E8F5D502C7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>ptolemy</AssemblyName>
+    <StartupObject>Ptolemy.Gui.Ptolemy</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Mono.Posix" />
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="nunit.core" />
+    <Reference Include="nunit.framework" />
+    <Reference Include="System.Xml" />
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\log4net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Tests\GPXTest.cs" />
+    <Compile Include="src\Formats\GPX\gpxType.cs" />
+    <Compile Include="src\Gui\Ptolemy.cs" />
+    <Compile Include="src\Model\GPSData.cs" />
+    <Compile Include="src\Utils\OSUtils.cs" />
+    <Compile Include="src\Model\Exceptions\GPSDataException.cs" />
+    <Compile Include="src\Model\GPSTrack.cs" />
+    <Compile Include="src\Model\GPSTrackSegment.cs" />
+    <Compile Include="Tests\GPSDataTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.desktop" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Tests\" />
+    <Folder Include="conf\" />
+    <Folder Include="log\" />
+    <Folder Include="data\" />
+    <Folder Include="src\" />
+    <Folder Include="src\Model\Exceptions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="conf\log4net.xml" />
+    <None Include="src\Formats\GPX\gpx.xsd" />
+    <None Include="data\Default.gpx" />
+    <None Include="data\Gare de prevost.gpx" />
+  </ItemGroup>
+</Project>

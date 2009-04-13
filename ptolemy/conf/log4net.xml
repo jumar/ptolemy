@@ -7,7 +7,7 @@
     </appender>
     
     <appender name="RollingFile" type="log4net.Appender.RollingFileAppender">
-        <file value="../log/example.log" />
+        <file value="./log/example.log" />
         <appendToFile value="true" />
         <maximumFileSize value="100KB" />
         <maxSizeRollBackups value="2" />

@@ -12,23 +12,23 @@ using log4net.Config;
 
 namespace Ptolemy.Tests
 {	
-	[TestFixture()]
+	//[TestFixture()]
 	public class GPXTest
 	{
 		private static readonly ILog sLogger = log4net.LogManager.GetLogger(typeof(GPXTest));
 		
-		[SetUp]
+		//[SetUp]
     	public void Init()
     	{
-	      	 XmlConfigurator.Configure(new System.IO.FileInfo("../conf/log4net.xml"));
+	      	 XmlConfigurator.Configure(new System.IO.FileInfo("../../conf/log4net.xml"));
     	}
 
-		[Test()]
-		public void TestCase()
+		//[Test()]
+		public void TestGPX()
 		{
 			sLogger.Info("Starting GPX test case");
 			XmlSerializer lSerializer = new XmlSerializer(typeof(gpxType));
-			using (FileStream lStream = new FileStream("Default.gpx", FileMode.Open))
+			using (FileStream lStream = new FileStream("../../data/Default.gpx", FileMode.Open))
       		{
         		gpxType lGPXInfo = (gpxType)lSerializer.Deserialize(lStream);
 
